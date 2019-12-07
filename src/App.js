@@ -8,6 +8,7 @@ import './App.css';
 
 
 import Header from './component/header/header.component'
+import SignInAndSignUp from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component'
 
 const hats = ()=> (
     <div>its a hats page</div> 
@@ -20,6 +21,7 @@ function App(){
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/shop" component={ShopPage} />
+          <Route exact path="/SignIn" component={SignInAndSignUp} />
         </Switch>
 
     </div>
