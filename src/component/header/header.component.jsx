@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
-
-
+import CartIcon from '../cart-icon/cart-icon.component'
+import CartDropDown from '../cart-dropdown/cart-dropdown.component'
 import './header.styles.scss';
 import {Link} from 'react-router-dom';
 import { ReactComponent as Logo } from '../../images/crown.svg';
@@ -22,9 +22,9 @@ const Header = ({currentUser}) => {
                 <div className="option" onClick={()=> auth.signOut()}>Sign Out</div>:
                 <Link className="option" to="/SignIn">Sign In</Link>
             }
-            
-            
+           <CartIcon />
         </div>
+        <CartDropDown></CartDropDown>
     </div>
 }
 
