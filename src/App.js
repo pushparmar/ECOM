@@ -1,4 +1,4 @@
-import React ,{component} from 'react';
+import React from 'react';
 import HomePage from './pages/homepage/homepgae-component';
 
 import {Switch , Route ,Redirect} from 'react-router-dom';
@@ -8,7 +8,7 @@ import { setCurrentUser } from './redux/user/user.action'
 import { connect } from 'react-redux';
 
 import ShopPage from './pages/shop/shop.component'
-import CollectionPreivew from './component/collection-preview/collection-preview.component';
+// import CollectionPreivew from './component/collection-preview/collection-preview.component';
 import './App.css';
 
 

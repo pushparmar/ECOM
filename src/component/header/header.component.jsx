@@ -8,7 +8,8 @@ import { ReactComponent as Logo } from '../../images/crown.svg';
 import {auth} from '../../firebase/firebase.utils'
 
 
-const Header = ({currentUser}) => {
+
+const Header = ({currentUser ,hidden}) => {
     return <div className="header">
         <Link className="logo-container" to='/'>
             <Logo className="logo"></Logo>
@@ -24,12 +25,16 @@ const Header = ({currentUser}) => {
             }
            <CartIcon />
         </div>
-        <CartDropDown></CartDropDown>
+        {
+            hidden ? null : <CartDropDown/> 
+        }
+        
     </div>
 }
 
-const mapStatetoProps = state => ({
-    currentUser : state.user.currentUser
+const mapStatetoProps = ({user : {currentUser} , cart : {hidden}}) => ({
+    currentUser,
+    hidden,    
 })
 
 
