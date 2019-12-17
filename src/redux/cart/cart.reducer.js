@@ -18,6 +18,12 @@ const INITIAL_STATE = {
                     ...state,
                     cartItem: addItemToCart(state.cartItem , action.payload)
                 };    
+            case CartActionType.CLEAR_ITEM_FROM_CART:
+                return {
+                    ...state,
+                    cartItem: state.cartItem.filter((item)=> { return item.id !== action.payload.id})
+                };
+            
             default:
             return state;
     }
