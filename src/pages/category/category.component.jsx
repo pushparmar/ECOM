@@ -3,7 +3,7 @@ import './category.styles.scss';
 
 
 import CollectionItem from '../../component/collection-item/collection-item.component';
-import {categoryData} from '../../redux/shop_data/shopData.selector';
+import {selectShopDataSection } from '../../redux/shop_data/shopData.selector';
 import { connect } from 'react-redux';
 
 
@@ -14,13 +14,12 @@ const CategoryPage = ({ match ,collection }) => {
         <h2>
             CATEGORY PAGE
         </h2>
-       
     </div>
     )
 }
 
 
-const mapStateToProps = (state , ownProps) => ({
-    collection : categoryData(ownProps.match.params.categoryId)(state)
+const mapStateToProps = ( state ,ownProps) => ({
+    collection : selectShopDataSection(ownProps.match.params.categoryId)(state),
 })
 export default connect(mapStateToProps)(CategoryPage);
