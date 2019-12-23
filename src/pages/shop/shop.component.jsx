@@ -1,24 +1,15 @@
 import React from 'react';
-import CollectionPreivew from '../../component/collection-preview/collection-preview.component';
+import CollectionOverView from '../../component/collection-overview/collection-overview.component';
+import CategoryPage from '../../pages/category/category.component';
+import {Switch , Route ,Redirect} from 'react-router-dom';
 
-import {connect} from 'react-redux';
-import {selectShopDataSection} from '../../redux/shop_data/shopData.selector';
-import {createStructuredSelector} from 'reselect';
-const ShopPage = ({SHOP_DATA}) =>{
+const ShopPage = ({match}) =>{
     return(
         <div className="shop-page">
-            {
-                SHOP_DATA.map( ({id , ...otherSectionProps}) => {
-                    return <CollectionPreivew key={id} {...otherSectionProps}></CollectionPreivew>
-                })
-            }
+            <Route exact path={`${match.path}`} component={CollectionOverView} />
+            <Route path={`${match.path}/:categoryId`} component={CategoryPage} />
         </div>
     )
 }
 
-const mapStateToProps = createStructuredSelector({
-    SHOP_DATA : selectShopDataSection
-})
-
-
-export default connect(mapStateToProps)(ShopPage);
+export default ShopPage;

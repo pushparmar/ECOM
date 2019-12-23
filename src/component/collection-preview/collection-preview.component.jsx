@@ -2,6 +2,8 @@ import React from 'react';
 import CollectionItem from '../collection-item/collection-item.component';
 import './collection-preview.styles.scss';
 
+import {Switch , Route ,Redirect} from 'react-router-dom';
+
 const CollectionPreivew = ({title , items}) => (
     <div className="collection-preview">
         <h1 className="title">
