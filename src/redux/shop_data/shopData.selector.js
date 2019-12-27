@@ -16,10 +16,10 @@ export const selectShopDataSections = createSelector(
 )
 
 
-export const filterShopData = (urlKey) => {
-    console.log(selectShopDataSections);
+export const filterShopData = (urlKey) => (
+    console.log(selectShopDataSections),
     createSelector(
         [selectShopData],
         shopData => shopData.SHOP_DATA.find(item => item.id === COLLECTION_ID_MAPS[urlKey])
     )
-}
+)
