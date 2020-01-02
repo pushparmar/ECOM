@@ -7,7 +7,7 @@ import {filterShopData } from '../../redux/shop_data/shopData.selector';
 import { connect } from 'react-redux';
 
 const CategoryPage = ({ collection }) => {
-    console.log(collection)
+    console.log(collection )
     return (
     <div className="category">
         <h2>
